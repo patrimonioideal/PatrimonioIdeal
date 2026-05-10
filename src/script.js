@@ -60,6 +60,9 @@ const T = {
     ctaSuccess: '¡Mensaje enviado! Te responderemos pronto. 💜',
     ctaError: 'Por favor completa nombre, correo y mensaje.',
     navPrivacy: 'Datos Personales',
+    navProgram: 'Programa',
+    footerFounded: 'Fundado el 28 de abril de 2026 · Bogotá, Colombia',
+    footerProgram: '↓ Descargar Programa de Gobierno',
     privTitle: 'Política de Tratamiento de Datos Personales',
     privDate: 'Vigente desde enero de 2026 · Ley 1581 de 2012 y Decreto 1377 de 2013',
     priv1h: '1. Responsable del tratamiento',
@@ -124,6 +127,9 @@ const T = {
     ctaSuccess: 'Message sent! We\'ll get back to you soon. 💜',
     ctaError: 'Please complete name, email and message.',
     navPrivacy: 'Data Policy',
+    navProgram: 'Programme',
+    footerFounded: 'Founded on 28 April 2026 · Bogotá, Colombia',
+    footerProgram: '↓ Download Government Programme',
     privTitle: 'Personal Data Processing Policy',
     privDate: 'In force since January 2026 · Law 1581 of 2012 and Decree 1377 of 2013',
     priv1h: '1. Data Controller',
@@ -327,6 +333,25 @@ document.getElementById('contacto-form').addEventListener('submit', async (e) =>
     btn.disabled = false;
     btn.textContent = T[lang].ctaSubmit;
   }
+});
+
+/* ── HAMBURGER MENU ───────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+// Close when a link is clicked
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 
 /* ── SCROLL REVEAL ────────────────────────────── */
