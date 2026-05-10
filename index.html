@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patrimonio Ideal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple-light: #c9a8e0;
+      --purple-mid: #a67cc4;
+      --purple-dark: #7b4fa6;
+      --pink-pastel: #f2a6d0;
+      --pink-bright: #e879b8;
+      --pink-deep: #c4518f;
+      --cream: #fdf8f5;
+      --dark: #1a0d2e;
+      --yellow-col: #ffd700;
+      --blue-col: #003087;
+      --red-col: #ce1126;
+      --text: #1a0d2e;
+      --muted: #6b5379;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      background: var(--cream);
+      border-bottom: 2px solid var(--purple-light);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-dark);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 2px;
+      background: var(--pink-bright);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--pink-deep); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      background: var(--purple-dark);
+      color: white !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--pink-deep) !important; color: white !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      padding-top: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      background: var(--purple-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(242, 166, 208, 0.15);
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(201, 168, 224, 0.1);
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink-pastel);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 32px; height: 2px;
+      background: var(--pink-pastel);
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--pink-pastel);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.75);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--pink-bright);
+      color: white;
+      padding: 0.85rem 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--pink-deep);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      padding: 0.85rem 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--pink-pastel);
+      background: rgba(242,166,208,0.1);
+    }
+
+    .hero-right {
+      background: var(--pink-pastel);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5rem 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: 'COLOMBIA\APROGRESA';
+      white-space: pre-line;
+      font-family: 'Playfair Display', serif;
+      font-size: 9rem;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(124, 79, 166, 0.08);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+      width: 100%;
+    }
+
+    .hero-slogan-block {
+      background: var(--dark);
+      color: white;
+      padding: 2rem 2.5rem;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-slogan-block p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--pink-pastel);
+    }
+
+    .hero-slogan-block span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-top: 0.75rem;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--pink-bright);
+      color: white;
+      padding: 0.75rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 28s linear infinite;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .ticker-inner span { margin: 0 2.5rem; }
+    .ticker-inner span::before { content: '✦ '; }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── MANIFESTO ── */
+    #manifiesto {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      min-height: 70vh;
+    }
+
+    .manifiesto-label {
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .manifiesto-label h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 900;
+      color: var(--pink-pastel);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      letter-spacing: 0.05em;
+    }
+
+    .manifiesto-content {
+      padding: 5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top: 4px solid var(--purple-light);
+    }
+
+    .manifiesto-content p {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.3rem, 2vw, 1.9rem);
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .manifiesto-content p strong {
+      color: var(--purple-dark);
+    }
+
+    .manifiesto-content p:last-child { margin-bottom: 0; }
+
+    /* ── POLÍTICAS ── */
+    #politicas {
+      background: var(--purple-dark);
+      padding: 6rem 5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 900;
+      color: white;
+    }
+
+    .section-header .line {
+      flex: 1;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .politics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .politics-card {
+      background: var(--purple-dark);
+      padding: 2.5rem 2rem;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .politics-card:hover {
+      background: var(--pink-deep);
+    }
+
+    .politics-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .politics-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--pink-pastel);
+      margin-bottom: 0.75rem;
+    }
+
+    .politics-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── FUNDADORA ── */
+    #fundadora {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .fundadora-img {
+      background: var(--purple-light);
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fundadora-placeholder {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: var(--purple-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      border: 6px solid white;
+      box-shadow: 0 0 0 3px var(--pink-bright);
+    }
+
+    .fundadora-text {
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top: 4px solid var(--pink-pastel);
+    }
+
+    .fundadora-text .tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .fundadora-text .tag::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--purple-dark);
+      display: inline-block;
+    }
+
+    .fundadora-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+
+    .fundadora-text h2 em {
+      font-style: italic;
+      color: var(--purple-dark);
+    }
+
+    .fundadora-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .fundadora-text p:last-child { margin-bottom: 0; }
+
+    /* ── NÚMEROS ── */
+    #numeros {
+      background: var(--pink-pastel);
+      padding: 5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background-color: var(--pink-bright);
+    }
+
+    .numero-item {
+      background: var(--pink-pastel);
+      padding: 3.5rem 3rem;
+      text-align: center;
+    }
+
+    .numero-item .big {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 5vw, 6rem);
+      font-weight: 900;
+      color: var(--purple-dark);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .numero-item .label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+    }
+
+    /* ── ÚNETE ── */
+    #unete {
+      background: var(--dark);
+      padding: 7rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #unete::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      border: 120px solid rgba(201,168,224,0.05);
+      pointer-events: none;
+    }
+
+    #unete h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    #unete h2 em {
+      font-style: italic;
+      color: var(--pink-pastel);
+    }
+
+    #unete p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .join-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .join-form input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: white;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .join-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .join-form input:focus { border-color: var(--pink-pastel); }
+
+    .join-form button {
+      background: var(--pink-bright);
+      color: white;
+      border: none;
+      padding: 1rem 1.8rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .join-form button:hover { background: var(--pink-deep); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 3px solid var(--purple-light);
+      padding: 3rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    footer img {
+      height: 44px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--purple-dark); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── COLOMBIA STRIPE ── */
+    .colombia-stripe {
+      height: 6px;
+      background: linear-gradient(to right,
+        var(--yellow-col) 0%, var(--yellow-col) 40%,
+        var(--blue-col) 40%, var(--blue-col) 62%,
+        var(--red-col) 62%, var(--red-col) 100%
+      );
+    }
+
+    /* ── LANGUAGE SWITCH ── */
+    .lang-switch {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+    }
+
+    .lang-switch button {
+    background: transparent;
+    border: 2px solid var(--purple-light);
+    color: var(--purple-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.45rem 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    }
+
+    .lang-switch button:hover {
+    border-color: var(--pink-bright);
+    color: var(--pink-deep);
+    }
+
+    .lang-switch button.active {
+    background: var(--purple-dark);
+    color: white;
+    border-color: var(--purple-dark);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left > * {
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 3rem 2rem; }
+      #manifiesto { grid-template-columns: 1fr; }
+      .manifiesto-label { writing-mode: horizontal-tb; padding: 2rem 2rem 0; }
+      .manifiesto-label h2 { writing-mode: horizontal-tb; transform: none; font-size: 2rem; }
+      .manifiesto-content { padding: 2rem; }
+      #politicas { padding: 3rem 1.5rem; }
+      .politics-grid { grid-template-columns: 1fr 1fr; }
+      #fundadora { grid-template-columns: 1fr; }
+      .fundadora-img { min-height: 300px; }
+      .fundadora-text { padding: 2.5rem 2rem; }
+      #numeros { grid-template-columns: 1fr; padding: 2rem; }
+      #unete { padding: 4rem 2rem; }
+      footer { flex-direction: column; padding: 2rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="colombia-stripe"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="patri-ideal.png" alt="Patrimonio Ideal" onerror="this.style.display='none'" />
+    </a>
+    <div class="lang-switch">
+        <button id="lang-es" class="active">ES</button>
+        <button id="lang-en">EN</button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#manifiesto">Manifiesto</a></li>
+      <li><a href="#politicas">Políticas</a></li>
+      <li><a href="#fundadora">Fundadora</a></li>
+      <li><a href="#unete" class="nav-cta">Únete</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-tag">Por una mejor Colombia</p>
+      <h1 class="hero-title">Por un <em>Patrimonio</em> que sea de todos.</h1>
+      <p class="hero-subtitle">Un partido que nace de la academia, la calle y la convicción: Colombia merece justicia social, libertad económica y futuro verde.</p>
+      <div class="hero-btns">
+        <a href="#manifiesto" class="btn-primary">Nuestro manifiesto</a>
+        <a href="#unete" class="btn-outline">Únete ahora</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-slogan-block">
+        <p>"El progreso verdadero no deja a nadie atrás."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>Socialismo</span>
+      <span>Socialdemocracia</span>
+      <span>Progresivismo</span>
+      <span>Libre Comercio</span>
+      <span>Conservadurismo Económico</span>
+      <span>Liberalismo Social</span>
+      <span>Ambientalismo</span>
+      <span>Feminismo</span>
+      <span>Todo por Colombia</span>
+      <span>Socialismo</span>
+      <span>Socialdemocracia</span>
+      <span>Progresivismo</span>
+      <span>Libre Comercio</span>
+      <span>Conservadurismo Económico</span>
+      <span>Liberalismo Social</span>
+      <span>Ambientalismo</span>
+      <span>Feminismo</span>
+    </div>
+  </div>
+
+  <!-- MANIFIESTO -->
+  <section id="manifiesto">
+    <div class="manifiesto-label">
+      <h2>Manifiesto</h2>
+    </div>
+    <div class="manifiesto-content">
+      <p>Creemos que <strong>Colombia merece algo mejor</strong>: un país donde la economía trabaje para las personas y no al revés, donde los derechos no sean privilegios y donde el planeta que habitamos sea tratado con respeto.</p>
+      <p>Somos un partido que entiende que el mercado y el Estado no son enemigos, sino herramientas. Que el progresismo no riñe con la responsabilidad fiscal. Que el feminismo es también económico, y el ambientalismo también es justicia.</p>
+      <p>Nacemos desde abajo, desde las aulas, la realidad en que vive Colombia y las redes. Somos el partido de quienes <strong>creen que cambiar las cosas es posible</strong>.</p>
+    </div>
+  </section>
+
+  <!-- POLÍTICAS -->
+  <section id="politicas">
+    <div class="section-header">
+      <h2>Nuestras Políticas</h2>
+      <div class="line"></div>
+    </div>
+    <div class="politics-grid">
+      <div class="politics-card">
+        <span class="icon">⚖️</span>
+        <h3>Socialismo</h3>
+        <p>Redistribución justa de la riqueza. Servicios públicos de calidad para todas las personas, sin excepción.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">🤝</span>
+        <h3>Socialdemocracia</h3>
+        <p>Estado de bienestar robusto. Educación, salud y pensiones como derechos fundamentales, no mercancías.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">🌱</span>
+        <h3>Progresivismo</h3>
+        <p>Avanzar hacia una Colombia más igualitaria, plural e inclusiva. El progreso es para todos y todas.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">📈</span>
+        <h3>Libre Comercio</h3>
+        <p>Apertura económica responsable que impulse la competitividad colombiana en el mundo con reglas claras.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">💰</span>
+        <h3>Responsabilidad Fiscal</h3>
+        <p>Gasto público eficiente. Finanzas sanas como base para la justicia social sostenida en el largo plazo.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">🗽</span>
+        <h3>Liberalismo Social</h3>
+        <p>Respeto absoluto a las libertades individuales. El Estado fuera de la vida privada de las personas.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">🌿</span>
+        <h3>Ambientalismo</h3>
+        <p>Transición ecológica justa. La biodiversidad colombiana es nuestro mayor patrimonio: hay que protegerla.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">✊</span>
+        <h3>Feminismo</h3>
+        <p>Igualdad real entre géneros en salarios, representación y seguridad. Los derechos de las mujeres no son negociables.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNDADORA -->
+  <section id="fundadora">
+    <div class="fundadora-img">
+      <div class="fundadora-placeholder">👩‍💻</div>
+    </div>
+    <div class="fundadora-text">
+      <p class="tag">Fundadora</p>
+      <h2><em>Camila Lucía</em><br>Caleon-Duque</h2>
+      <p>Estudiante de bachillerato con la convicción de que la política colombiana necesita voces nuevas, jóvenes y valientes. Pronto, estudiante de Ingeniería Informática.</p>
+      <p>Camila fundó Patrimonio Ideal desde la certeza de que la tecnología, la equidad y la democracia van de la mano. Que ser joven no es un obstáculo para transformar el país, sino exactamente la razón para hacerlo.</p>
+      <p>Su visión une el rigor analítico de las ciencias exactas con el compromiso humano de la política. <strong>Patrimonio Ideal es un legado en construcción.</strong></p>
+    </div>
+  </section>
+
+  <!-- NÚMEROS -->
+  <section id="numeros">
+    <div class="numero-item">
+      <div class="big">8</div>
+      <div class="label">Ejes Programáticos</div>
+    </div>
+    <div class="numero-item">
+      <div class="big">1</div>
+      <div class="label">Partido con Visión</div>
+    </div>
+    <div class="numero-item">
+      <div class="big">53.9 m</div>
+      <div class="label">Colombianos por Convencer</div>
+    </div>
+  </section>
+
+  <!-- ÚNETE -->
+  <section id="unete">
+    <h2>¿Listo para cambiar<br><em>Colombia</em>?</h2>
+    <p>Déjanos tu correo y te contamos cómo ser parte del movimiento que está construyendo el futuro que el país merece.</p>
+    <div class="join-form">
+      <input type="email" placeholder="tu@correo.com" />
+      <button type="button">Únete</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="patri-ideal.png" alt="Patrimonio Ideal" onerror="this.style.display='none'" />
+    <ul class="footer-links">
+      <li><a href="#manifiesto">Manifiesto</a></li>
+      <li><a href="#politicas">Políticas</a></li>
+      <li><a href="#fundadora">Fundadora</a></li>
+      <li><a href="#">Prensa</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Patrimonio Ideal</p>
+  </footer>
+
+  <div class="colombia-stripe"></div>
+
+  <script>
+
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+        }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.politics-card, .numero-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
+
+    // TRANSLATIONS
+    const translations = {
+        es: {
+        navManifesto: "Manifiesto",
+        navPolicies: "Políticas",
+        navFounder: "Fundadora",
+        navJoin: "Únete",
+
+        heroTag: "Por una mejor Colombia",
+        heroTitle: "Por un <em>Patrimonio</em> que sea de todos.",
+        heroSubtitle:
+            "Un partido que nace de la academia, la calle y la convicción: Colombia merece justicia social, libertad económica y futuro verde.",
+
+        manifestoBtn: "Nuestro manifiesto",
+        joinBtn: "Únete ahora",
+
+        slogan: '"El progreso verdadero no deja a nadie atrás."',
+
+        ticker: [
+            "Socialismo",
+            "Socialdemocracia",
+            "Progresivismo",
+            "Libre Comercio",
+            "Conservadurismo Económico",
+            "Liberalismo Social",
+            "Ambientalismo",
+            "Feminismo",
+            "Todo por Colombia"
+        ],
+
+        manifestoTitle: "Manifiesto",
+
+        manifesto1:
+            "Creemos que <strong>Colombia merece algo mejor</strong>: un país donde la economía trabaje para las personas y no al revés, donde los derechos no sean privilegios y donde el planeta que habitamos sea tratado con respeto.",
+
+        manifesto2:
+            "Somos un partido que entiende que el mercado y el Estado no son enemigos, sino herramientas. Que el progresismo no riñe con la responsabilidad fiscal. Que el feminismo es también económico, y el ambientalismo también es justicia.",
+
+        manifesto3:
+            "Nacemos desde abajo, desde las aulas, la realidad en que vive Colombia y las redes. Somos el partido de quienes <strong>creen que cambiar las cosas es posible</strong>.",
+
+        policiesTitle: "Nuestras Políticas",
+
+        policies: [
+            {
+            title: "Socialismo",
+            text: "Redistribución justa de la riqueza. Servicios públicos de calidad para todas las personas, sin excepción."
+            },
+            {
+            title: "Socialdemocracia",
+            text: "Estado de bienestar robusto. Educación, salud y pensiones como derechos fundamentales, no mercancías."
+            },
+            {
+            title: "Progresivismo",
+            text: "Avanzar hacia una Colombia más igualitaria, plural e inclusiva. El progreso es para todos y todas."
+            },
+            {
+            title: "Libre Comercio",
+            text: "Apertura económica responsable que impulse la competitividad colombiana en el mundo con reglas claras."
+            },
+            {
+            title: "Responsabilidad Fiscal",
+            text: "Gasto público eficiente. Finanzas sanas como base para la justicia social sostenida en el largo plazo."
+            },
+            {
+            title: "Liberalismo Social",
+            text: "Respeto absoluto a las libertades individuales. El Estado fuera de la vida privada de las personas."
+            },
+            {
+            title: "Ambientalismo",
+            text: "Transición ecológica justa. La biodiversidad colombiana es nuestro mayor patrimonio: hay que protegerla."
+            },
+            {
+            title: "Feminismo",
+            text: "Igualdad real entre géneros en salarios, representación y seguridad. Los derechos de las mujeres no son negociables."
+            }
+        ],
+
+        founderTag: "Fundadora",
+
+        founderTitle:
+            "<em>Camila Lucía</em><br>Caleon-Duque",
+
+        founder1:
+            "Estudiante de bachillerato con la convicción de que la política colombiana necesita voces nuevas, jóvenes y valientes. Pronto, estudiante de Ingeniería Informática.",
+
+        founder2:
+            "Camila fundó Patrimonio Ideal desde la certeza de que la tecnología, la equidad y la democracia van de la mano. Que ser joven no es un obstáculo para transformar el país, sino exactamente la razón para hacerlo.",
+
+        founder3:
+            "Su visión une el rigor analítico de las ciencias exactas con el compromiso humano de la política. <strong>Patrimonio Ideal es un legado en construcción.</strong>",
+
+        stats: [
+            "Ejes Programáticos",
+            "Partido con Visión",
+            "Colombianos por Convencer"
+        ],
+
+        joinTitle:
+            "¿Listo para cambiar<br><em>Colombia</em>?",
+
+        joinText:
+            "Déjanos tu correo y te contamos cómo ser parte del movimiento que está construyendo el futuro que el país merece.",
+
+        joinPlaceholder: "tu@correo.com",
+        joinAction: "Únete",
+
+        footerPress: "Prensa",
+        footerContact: "Contacto",
+
+        success:
+            "¡Gracias! Pronto te escribimos. 💜",
+
+        invalid:
+            "Por favor ingresa un correo válido"
+        },
+
+        en: {
+        navManifesto: "Manifesto",
+        navPolicies: "Policies",
+        navFounder: "Founder",
+        navJoin: "Join",
+
+        heroTag: "For a better Colombia",
+        heroTitle:
+            "For a <em>Heritage</em> that belongs to everyone.",
+
+        heroSubtitle:
+            "A party born from academia, the streets, and conviction: Colombia deserves social justice, economic freedom, and a green future.",
+
+        manifestoBtn: "Our manifesto",
+        joinBtn: "Join now",
+
+        slogan:
+            '"True progress leaves no one behind."',
+
+        ticker: [
+            "Socialism",
+            "Social Democracy",
+            "Progressivism",
+            "Free Trade",
+            "Economic Conservatism",
+            "Social Liberalism",
+            "Environmentalism",
+            "Feminism",
+            "Everything for Colombia"
+        ],
+
+        manifestoTitle: "Manifesto",
+
+        manifesto1:
+            "We believe that <strong>Colombia deserves better</strong>: a country where the economy works for people and not the other way around, where rights are not privileges, and where the planet we inhabit is treated with respect.",
+
+        manifesto2:
+            "We are a party that understands that the market and the state are not enemies, but tools. That progressivism is compatible with fiscal responsibility. That feminism is also economic, and environmentalism is also justice.",
+
+        manifesto3:
+            "We are born from below — from classrooms, Colombia’s lived reality, and the internet. We are the party of those who <strong>believe change is possible</strong>.",
+
+        policiesTitle: "Our Policies",
+
+        policies: [
+            {
+            title: "Socialism",
+            text: "Fair redistribution of wealth. High-quality public services for everyone, without exception."
+            },
+            {
+            title: "Social Democracy",
+            text: "A strong welfare state. Education, healthcare, and pensions as fundamental rights, not commodities."
+            },
+            {
+            title: "Progressivism",
+            text: "Moving toward a more equal, plural, and inclusive Colombia. Progress must belong to everyone."
+            },
+            {
+            title: "Free Trade",
+            text: "Responsible economic openness that boosts Colombian competitiveness globally through clear rules."
+            },
+            {
+            title: "Fiscal Responsibility",
+            text: "Efficient public spending. Healthy finances as the basis for long-term social justice."
+            },
+            {
+            title: "Social Liberalism",
+            text: "Absolute respect for individual freedoms. The state should stay out of people’s private lives."
+            },
+            {
+            title: "Environmentalism",
+            text: "A fair ecological transition. Colombia’s biodiversity is our greatest heritage and must be protected."
+            },
+            {
+            title: "Feminism",
+            text: "Real gender equality in wages, representation, and safety. Women's rights are non-negotiable."
+            }
+        ],
+
+        founderTag: "Founder",
+
+        founderTitle:
+            "<em>Camila Lucía</em><br>Caleon-Duque",
+
+        founder1:
+            "A high school student convinced that Colombian politics needs new, young, and courageous voices. Soon to be a Computer Engineering student.",
+
+        founder2:
+            "Camila founded Patrimonio Ideal with the certainty that technology, equality, and democracy go hand in hand. That being young is not an obstacle to transforming the country, but precisely the reason to do so.",
+
+        founder3:
+            "Her vision combines the analytical rigor of the exact sciences with the human commitment of politics. <strong>Patrimonio Ideal is a legacy under construction.</strong>",
+
+        stats: [
+            "Programmatic Axes",
+            "Party with Vision",
+            "Colombians to Convince"
+        ],
+
+        joinTitle:
+            "Ready to change<br><em>Colombia</em>?",
+
+        joinText:
+            "Leave us your email and discover how to become part of the movement building the future this country deserves.",
+
+        joinPlaceholder: "you@email.com",
+        joinAction: "Join",
+
+        footerPress: "Press",
+        footerContact: "Contact",
+
+        success:
+            "Thank you! We will contact you soon. 💜",
+
+        invalid:
+            "Please enter a valid email"
+        }
+    };
+
+    let currentLang = 'es';
+
+    // LANGUAGE SWITCHER
+    function setLanguage(lang) {
+        currentLang = lang;
+
+        document.documentElement.lang = lang;
+
+        // NAV
+        document.querySelectorAll('.nav-links a')[0].innerHTML = translations[lang].navManifesto;
+        document.querySelectorAll('.nav-links a')[1].innerHTML = translations[lang].navPolicies;
+        document.querySelectorAll('.nav-links a')[2].innerHTML = translations[lang].navFounder;
+        document.querySelectorAll('.nav-links a')[3].innerHTML = translations[lang].navJoin;
+
+        // HERO
+        document.querySelector('.hero-tag').innerHTML = translations[lang].heroTag;
+        document.querySelector('.hero-title').innerHTML = translations[lang].heroTitle;
+        document.querySelector('.hero-subtitle').innerHTML = translations[lang].heroSubtitle;
+
+        document.querySelector('.btn-primary').innerHTML = translations[lang].manifestoBtn;
+        document.querySelector('.btn-outline').innerHTML = translations[lang].joinBtn;
+
+        document.querySelector('.hero-slogan-block p').innerHTML = translations[lang].slogan;
+
+        // TICKER
+        const tickerHTML = translations[lang].ticker
+        .concat(translations[lang].ticker)
+        .map(item => `<span>${item}</span>`)
+        .join('');
+
+        document.querySelector('.ticker-inner').innerHTML = tickerHTML;
+
+        // MANIFESTO
+        document.querySelector('.manifiesto-label h2').innerHTML =
+        translations[lang].manifestoTitle;
+
+        const manifestoParagraphs =
+        document.querySelectorAll('.manifiesto-content p');
+
+        manifestoParagraphs[0].innerHTML =
+        translations[lang].manifesto1;
+
+        manifestoParagraphs[1].innerHTML =
+        translations[lang].manifesto2;
+
+        manifestoParagraphs[2].innerHTML =
+        translations[lang].manifesto3;
+
+        // POLICIES
+        document.querySelector('#politicas .section-header h2').innerHTML =
+        translations[lang].policiesTitle;
+
+        const policyCards =
+        document.querySelectorAll('.politics-card');
+
+        policyCards.forEach((card, index) => {
+        card.querySelector('h3').innerHTML =
+            translations[lang].policies[index].title;
+
+        card.querySelector('p').innerHTML =
+            translations[lang].policies[index].text;
+        });
+
+        // FOUNDER
+        document.querySelector('.fundadora-text .tag').innerHTML =
+        translations[lang].founderTag;
+
+        document.querySelector('.fundadora-text h2').innerHTML =
+        translations[lang].founderTitle;
+
+        const founderParagraphs =
+        document.querySelectorAll('.fundadora-text p');
+
+        founderParagraphs[1].innerHTML =
+        translations[lang].founder1;
+
+        founderParagraphs[2].innerHTML =
+        translations[lang].founder2;
+
+        founderParagraphs[3].innerHTML =
+        translations[lang].founder3;
+
+        // STATS
+        const stats =
+        document.querySelectorAll('.numero-item .label');
+
+        stats.forEach((stat, index) => {
+        stat.innerHTML = translations[lang].stats[index];
+        });
+
+        // JOIN
+        document.querySelector('#unete h2').innerHTML =
+        translations[lang].joinTitle;
+
+        document.querySelector('#unete p').innerHTML =
+        translations[lang].joinText;
+
+        document.querySelector('.join-form input').placeholder =
+        translations[lang].joinPlaceholder;
+
+        document.querySelector('.join-form button').innerHTML =
+        translations[lang].joinAction;
+
+        // FOOTER
+        const footerLinks =
+        document.querySelectorAll('.footer-links a');
+
+        footerLinks[0].innerHTML = translations[lang].navManifesto;
+        footerLinks[1].innerHTML = translations[lang].navPolicies;
+        footerLinks[2].innerHTML = translations[lang].navFounder;
+        footerLinks[3].innerHTML = translations[lang].footerPress;
+        footerLinks[4].innerHTML = translations[lang].footerContact;
+
+        // ACTIVE BUTTONS
+        document.getElementById('lang-es')
+        .classList.toggle('active', lang === 'es');
+
+        document.getElementById('lang-en')
+        .classList.toggle('active', lang === 'en');
+    }
+
+    // BUTTONS
+    document.getElementById('lang-es')
+        .addEventListener('click', () => {
+        setLanguage('es');
+        });
+
+    document.getElementById('lang-en')
+        .addEventListener('click', () => {
+        setLanguage('en');
+        });
+
+    // JOIN FORM
+    document.querySelector('.join-form button')
+        .addEventListener('click', () => {
+
+        const input =
+            document.querySelector('.join-form input');
+
+        if (input.value && input.value.includes('@')) {
+
+            input.value =
+            translations[currentLang].success;
+
+            input.style.color =
+            'var(--pink-pastel)';
+
+            input.disabled = true;
+
+        } else {
+
+            input.style.borderColor =
+            '#ff6b9d';
+
+            input.placeholder =
+            translations[currentLang].invalid;
+        }
+        });
+
+    </script>
+
+</body>
+</html>
