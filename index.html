@@ -19,116 +19,107 @@
       <img src="patri-ideal.png" alt="Patrimonio Ideal" onerror="this.style.display='none'" />
     </a>
     <div class="lang-switch">
-        <button id="lang-es" class="active">ES</button>
-        <button id="lang-en">EN</button>
+      <button id="lang-es" class="active">ES</button>
+      <button id="lang-en">EN</button>
     </div>
     <ul class="nav-links">
-      <li><a href="#manifiesto">Manifiesto</a></li>
-      <li><a href="#politicas">Políticas</a></li>
-      <li><a href="#fundadora">Fundadora</a></li>
-      <li><a href="#unete" class="nav-cta">Únete</a></li>
+      <li><a href="#manifiesto" data-i18n="navManifesto">Manifiesto</a></li>
+      <li><a href="#politicas" data-i18n="navPolicies">Propuestas</a></li>
+      <li><a href="#fundadora" data-i18n="navFounder">Fundadora</a></li>
+      <li><a href="#firmas" data-i18n="navSign">Apóyanos</a></li>
+      <li><a href="#contacto" class="nav-cta" data-i18n="navContact">Contacto</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-tag">Por una mejor Colombia</p>
-      <h1 class="hero-title">Por un <em>Patrimonio</em> que sea de todos.</h1>
-      <p class="hero-subtitle">Un partido que nace de la academia, la calle y la convicción: Colombia merece justicia social, libertad económica y futuro verde.</p>
+      <p class="hero-tag" data-i18n="heroTag">Por una mejor Colombia</p>
+      <h1 class="hero-title" data-i18n-html="heroTitle">Por un <em>Patrimonio</em><br>que sea de todos.</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">Un movimiento que nace de la convicción de que Colombia puede — y merece — construir algo distinto.</p>
       <div class="hero-btns">
-        <a href="#manifiesto" class="btn-primary">Nuestro manifiesto</a>
-        <a href="#unete" class="btn-outline">Únete ahora</a>
+        <a href="#manifiesto" class="btn-primary" data-i18n="manifestoBtn">Nuestro manifiesto</a>
+        <a href="#firmas" class="btn-outline" data-i18n="signBtn">Firma ahora</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-slogan-block">
-        <p>"El progreso verdadero no deja a nadie atrás."</p>
+        <p data-i18n="slogan">"El progreso verdadero no deja a nadie atrás."</p>
       </div>
     </div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker" aria-hidden="true">
-    <div class="ticker-inner">
-      <span>Socialismo</span>
-      <span>Socialdemocracia</span>
-      <span>Progresivismo</span>
-      <span>Libre Comercio</span>
-      <span>Conservadurismo Económico</span>
-      <span>Liberalismo Social</span>
-      <span>Ambientalismo</span>
-      <span>Feminismo</span>
-      <span>Todo por Colombia</span>
-      <span>Socialismo</span>
-      <span>Socialdemocracia</span>
-      <span>Progresivismo</span>
-      <span>Libre Comercio</span>
-      <span>Conservadurismo Económico</span>
-      <span>Liberalismo Social</span>
-      <span>Ambientalismo</span>
-      <span>Feminismo</span>
+    <div class="ticker-inner" id="ticker-inner">
+      <span>Bienestar</span><span>Derechos</span><span>Economía abierta</span>
+      <span>Naturaleza</span><span>Igualdad</span><span>Futuro</span>
+      <span>Responsabilidad</span><span>Libertad</span><span>Colombia</span>
+      <span>Bienestar</span><span>Derechos</span><span>Economía abierta</span>
+      <span>Naturaleza</span><span>Igualdad</span><span>Futuro</span>
+      <span>Responsabilidad</span><span>Libertad</span><span>Colombia</span>
     </div>
   </div>
 
   <!-- MANIFIESTO -->
   <section id="manifiesto">
     <div class="manifiesto-label">
-      <h2>Manifiesto</h2>
+      <h2 data-i18n="manifestoTitle">Manifiesto</h2>
     </div>
     <div class="manifiesto-content">
-      <p>Creemos que <strong>Colombia merece algo mejor</strong>: un país donde la economía trabaje para las personas y no al revés, donde los derechos no sean privilegios y donde el planeta que habitamos sea tratado con respeto.</p>
-      <p>Somos un partido que entiende que el mercado y el Estado no son enemigos, sino herramientas. Que el progresismo no riñe con la responsabilidad fiscal. Que el feminismo es también económico, y el ambientalismo también es justicia.</p>
-      <p>Nacemos desde abajo, desde las aulas, la realidad en que vive Colombia y las redes. Somos el partido de quienes <strong>creen que cambiar las cosas es posible</strong>.</p>
+      <p data-i18n-html="manifesto1">Colombia tiene una deuda pendiente consigo misma. Una deuda con los millones que trabajan duro y aún no alcanzan, con los territorios que dan sus recursos y no reciben nada a cambio, con las generaciones que heredarán un planeta que no supimos cuidar. <strong>Patrimonio Ideal nace para saldar esa deuda.</strong></p>
+      <p data-i18n-html="manifesto2">Creemos en un Estado que cuida sin controlar, que redistribuye sin asfixiar, que regula sin estorbar. Que la salud y la educación son inversiones, no gastos. Que las finanzas públicas sanas no son opuestas a la justicia — son su condición.</p>
+      <p data-i18n-html="manifesto3">Creemos también que el mercado, bien regulado, es aliado de la prosperidad compartida. Que la apertura al mundo no significa abandono de lo propio. Y que ningún modelo económico vale si destruye la tierra que nos sustenta.</p>
+      <p data-i18n-html="manifesto4">Somos el partido de quienes <strong>creen que se puede gobernar con rigor y con corazón al mismo tiempo</strong>. Que la política no tiene que elegir entre ser seria y ser humana. Patrimonio Ideal es esa apuesta.</p>
     </div>
   </section>
 
   <!-- POLÍTICAS -->
   <section id="politicas">
     <div class="section-header">
-      <h2>Nuestras Políticas</h2>
+      <h2 data-i18n="policiesTitle">Nuestras Propuestas</h2>
       <div class="line"></div>
     </div>
     <div class="politics-grid">
       <div class="politics-card">
-        <span class="icon">⚖️</span>
-        <h3>Socialismo</h3>
-        <p>Redistribución justa de la riqueza. Servicios públicos de calidad para todas las personas, sin excepción.</p>
+        <span class="icon">🏥</span>
+        <h3 data-i18n="p1title">Atención Primaria en Salud</h3>
+        <p data-i18n="p1text">Dotar y operar centros de salud de primer nivel en municipios sin cobertura adecuada, priorizando los 170 municipios PDET. Un médico general, una enfermera y atención básica garantizados antes de remitir al paciente a niveles superiores.</p>
       </div>
       <div class="politics-card">
-        <span class="icon">🤝</span>
-        <h3>Socialdemocracia</h3>
-        <p>Estado de bienestar robusto. Educación, salud y pensiones como derechos fundamentales, no mercancías.</p>
-      </div>
-      <div class="politics-card">
-        <span class="icon">🌱</span>
-        <h3>Progresivismo</h3>
-        <p>Avanzar hacia una Colombia más igualitaria, plural e inclusiva. El progreso es para todos y todas.</p>
-      </div>
-      <div class="politics-card">
-        <span class="icon">📈</span>
-        <h3>Libre Comercio</h3>
-        <p>Apertura económica responsable que impulse la competitividad colombiana en el mundo con reglas claras.</p>
-      </div>
-      <div class="politics-card">
-        <span class="icon">💰</span>
-        <h3>Responsabilidad Fiscal</h3>
-        <p>Gasto público eficiente. Finanzas sanas como base para la justicia social sostenida en el largo plazo.</p>
-      </div>
-      <div class="politics-card">
-        <span class="icon">🗽</span>
-        <h3>Liberalismo Social</h3>
-        <p>Respeto absoluto a las libertades individuales. El Estado fuera de la vida privada de las personas.</p>
+        <span class="icon">📚</span>
+        <h3 data-i18n="p2title">Educación Pública de Calidad</h3>
+        <p data-i18n="p2text">Dotar las escuelas rurales de conectividad básica, actualizar los currículos de bachillerato con competencias digitales y financiar becas para técnicos y tecnólogos del SENA.</p>
       </div>
       <div class="politics-card">
         <span class="icon">🌿</span>
-        <h3>Ambientalismo</h3>
-        <p>Transición ecológica justa. La biodiversidad colombiana es nuestro mayor patrimonio: hay que protegerla.</p>
+        <h3 data-i18n="p3title">Protección Ambiental Efectiva</h3>
+        <p data-i18n="p3text">Endurecer las sanciones a la deforestación ilegal en la Amazonia, impulsar energías renovables en departamentos con alta radiación solar y apoyar a agricultores en la reconversión sostenible.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">📈</span>
+        <h3 data-i18n="p4title">Apoyo al Emprendimiento Local</h3>
+        <p data-i18n="p4text">Simplificar los trámites de formalización empresarial, ampliar las líneas de microcrédito de Bancóldex para pequeños productores y reducir la carga tributaria a empresas con menos de diez empleados.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">📊</span>
+        <h3 data-i18n="p5title">Gasto Público Eficiente</h3>
+        <p data-i18n="p5text">Auditar y eliminar contratos de prestación de servicios redundantes en entidades del orden nacional, implementar presupuesto por resultados en ministerios clave y publicar en tiempo real la ejecución del gasto.</p>
       </div>
       <div class="politics-card">
         <span class="icon">✊</span>
-        <h3>Feminismo</h3>
-        <p>Igualdad real entre géneros en salarios, representación y seguridad. Los derechos de las mujeres no son negociables.</p>
+        <h3 data-i18n="p6title">Equidad de Género en la Práctica</h3>
+        <p data-i18n="p6text">Exigir auditorías salariales en empresas de más de 50 empleados, fortalecer las casas de justicia para víctimas de violencia de género y garantizar paridad en listas electorales.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">🌾</span>
+        <h3 data-i18n="p7title">Seguridad Alimentaria y Campo</h3>
+        <p data-i18n="p7text">Fortalecer los mercados campesinos locales, garantizar asistencia técnica gratuita a pequeños agricultores y apoyar la sustitución voluntaria de cultivos ilícitos con proyectos productivos sostenibles.</p>
+      </div>
+      <div class="politics-card">
+        <span class="icon">💻</span>
+        <h3 data-i18n="p8title">Estado Digital y Transparente</h3>
+        <p data-i18n="p8text">Digitalizar los principales trámites ciudadanos, publicar en datos abiertos los contratos del Estado y crear un portal de seguimiento presupuestal accesible para cualquier colombiano.</p>
       </div>
     </div>
   </section>
@@ -139,11 +130,11 @@
       <div class="fundadora-placeholder">👩‍💻</div>
     </div>
     <div class="fundadora-text">
-      <p class="tag">Fundadora</p>
-      <h2><em>Camila Lucía</em><br>Duque</h2>
-      <p>Estudiante de bachillerato con la convicción de que la política colombiana necesita voces nuevas, jóvenes y valientes. Pronto, estudiante de Ingeniería Informática.</p>
-      <p>Camila fundó Patrimonio Ideal desde la certeza de que la tecnología, la equidad y la democracia van de la mano. Que ser joven no es un obstáculo para transformar el país, sino exactamente la razón para hacerlo.</p>
-      <p>Su visión une el rigor analítico de las ciencias exactas con el compromiso humano de la política. <strong>Patrimonio Ideal es un legado en construcción.</strong></p>
+      <p class="tag" data-i18n="founderTag">Fundadora</p>
+      <h2 data-i18n-html="founderTitle"><em>Camila Lucía</em><br>Duque</h2>
+      <p data-i18n="founder1">Estudiante de bachillerato con la convicción de que la política colombiana necesita voces nuevas, jóvenes y valientes. Pronto, estudiante de Ingeniería Informática.</p>
+      <p data-i18n="founder2">Camila fundó Patrimonio Ideal desde la certeza de que la tecnología, la equidad y la democracia van de la mano. Que ser joven no es un obstáculo para transformar el país, sino exactamente la razón para hacerlo.</p>
+      <p data-i18n-html="founder3">Su visión une el rigor analítico de las ciencias exactas con el compromiso humano de la política. <strong>Patrimonio Ideal es un legado en construcción.</strong></p>
     </div>
   </section>
 
@@ -151,25 +142,152 @@
   <section id="numeros">
     <div class="numero-item">
       <div class="big">8</div>
-      <div class="label">Ejes Programáticos</div>
+      <div class="label" data-i18n="stat1">Ejes Programáticos</div>
     </div>
     <div class="numero-item">
-      <div class="big">1</div>
-      <div class="label">Partido con Visión</div>
+      <div class="big" id="firma-count-hero">—</div>
+      <div class="label" data-i18n="stat2">Firmas Recolectadas</div>
     </div>
     <div class="numero-item">
-      <div class="big">53.9 m</div>
-      <div class="label">Colombianos por Convencer</div>
+      <div class="big">53.9m</div>
+      <div class="label" data-i18n="stat3">Colombianos por Convencer</div>
     </div>
   </section>
 
-  <!-- ÚNETE -->
-  <section id="unete">
-    <h2>¿Listo para cambiar<br><em>Colombia</em>?</h2>
-    <p>Déjanos tu correo y te contamos cómo ser parte del movimiento que está construyendo el futuro que el país merece.</p>
-    <div class="join-form">
-      <input type="email" placeholder="tu@correo.com" />
-      <button type="button">Únete</button>
+  <!-- FIRMAS -->
+  <section id="firmas">
+    <div class="firmas-inner">
+      <div class="firmas-left">
+        <p class="firmas-tag" data-i18n="sigTag">Representación Parlamentaria</p>
+        <h2 data-i18n-html="sigTitle">Ayúdanos a<br>llegar al <em>Congreso</em>.</h2>
+        <p data-i18n="sigText">Para obtener Personería Jurídica y participar en elecciones al Congreso necesitamos recolectar firmas de apoyo. Cada firma es un voto de confianza en que Colombia puede ser diferente.</p>
+        <div class="firmas-meta">
+          <div class="firmas-progress-wrap">
+            <div class="firmas-bar">
+              <div class="firmas-bar-fill" id="firmas-bar-fill"></div>
+            </div>
+            <div class="firmas-numbers">
+              <span id="firmas-actual">0</span>
+              <span data-i18n="sigOf">de</span>
+              <span id="firmas-meta-label">50,000</span>
+              <span data-i18n="sigSigs">firmas</span>
+            </div>
+          </div>
+          <div class="firmas-percent" id="firmas-percent">0%</div>
+        </div>
+      </div>
+
+      <div class="firmas-right">
+        <form id="firma-form" class="firma-form" novalidate>
+          <h3 data-i18n="sigFormTitle">Firma el respaldo</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="sigName">Nombre completo *</label>
+              <input type="text" id="sig-name" autocomplete="name" />
+            </div>
+          </div>
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label data-i18n="sigDoc">Cédula *</label>
+              <input type="text" id="sig-doc" inputmode="numeric" maxlength="10" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="sigCity">Ciudad</label>
+              <input type="text" id="sig-city" autocomplete="address-level2" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="sigEmail">Correo electrónico *</label>
+              <input type="email" id="sig-email" autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="sig-consent" />
+            <label for="sig-consent" data-i18n="sigConsent">Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012.</label>
+          </div>
+          <button type="submit" class="btn-firma" data-i18n="sigSubmit">Firmar respaldo</button>
+          <div class="form-feedback" id="firma-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-left">
+        <p class="contacto-tag" data-i18n="ctaTag">Contacto</p>
+        <h2 data-i18n-html="ctaTitle">¿Tienes algo<br>que <em>decirnos</em>?</h2>
+        <p data-i18n="ctaText">Estamos escuchando. Prensa, alianzas, propuestas ciudadanas o simplemente saludar — escríbenos.</p>
+        <div class="contacto-links">
+          <a href="mailto:contacto@patrimonioideal.co" class="contacto-link">✉ contacto@patrimonioideal.co</a>
+        </div>
+      </div>
+      <div class="contacto-right">
+        <form id="contacto-form" class="contacto-form" novalidate>
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label data-i18n="ctaName">Nombre *</label>
+              <input type="text" id="ct-name" />
+            </div>
+            <div class="form-group">
+              <label data-i18n="ctaEmail2">Correo *</label>
+              <input type="email" id="ct-email" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="ctaSubject">Asunto</label>
+              <input type="text" id="ct-subject" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="ctaMsg">Mensaje *</label>
+              <textarea id="ct-msg" rows="5"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="ctaSubmit">Enviar mensaje</button>
+          <div class="form-feedback" id="contacto-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLÍTICA DE DATOS -->
+  <section id="privacidad">
+    <div class="privacidad-inner">
+      <div class="privacidad-header">
+        <h2 data-i18n="privTitle">Política de Tratamiento de Datos Personales</h2>
+        <p class="privacidad-date" data-i18n="privDate">Vigente desde enero de 2026 · Ley 1581 de 2012 y Decreto 1377 de 2013</p>
+      </div>
+      <div class="privacidad-grid">
+        <div class="privacidad-block">
+          <h3 data-i18n="priv1h">1. Responsable del tratamiento</h3>
+          <p data-i18n="priv1p">Patrimonio Ideal es el responsable del tratamiento de los datos personales recolectados a través de este sitio web. Correo de contacto: <a href="mailto:datos@patrimonioideal.co">datos@patrimonioideal.co</a></p>
+        </div>
+        <div class="privacidad-block">
+          <h3 data-i18n="priv2h">2. Datos que recolectamos</h3>
+          <p data-i18n="priv2p">Nombre completo, número de cédula de ciudadanía, ciudad de residencia y correo electrónico. Solo recolectamos los datos estrictamente necesarios para los fines descritos en esta política.</p>
+        </div>
+        <div class="privacidad-block">
+          <h3 data-i18n="priv3h">3. Finalidad del tratamiento</h3>
+          <p data-i18n="priv3p">Los datos del formulario de firmas se usan exclusivamente para acreditar respaldo ciudadano ante las autoridades electorales colombianas (CNE) en el marco de la solicitud de Personería Jurídica. Los datos del formulario de contacto se usan para responder tu mensaje.</p>
+        </div>
+        <div class="privacidad-block">
+          <h3 data-i18n="priv4h">4. Derechos del titular</h3>
+          <p data-i18n="priv4p">Tienes derecho a conocer, actualizar, rectificar y suprimir tus datos, así como a revocar la autorización otorgada. Puedes ejercer estos derechos escribiendo a <a href="mailto:datos@patrimonioideal.co">datos@patrimonioideal.co</a> con el asunto "Derechos ARCO".</p>
+        </div>
+        <div class="privacidad-block">
+          <h3 data-i18n="priv5h">5. Seguridad de la información</h3>
+          <p data-i18n="priv5p">Los números de cédula se almacenan de forma anonimizada mediante función de hash unidireccional. No se comparten datos personales con terceros salvo obligación legal o requerimiento de autoridad electoral competente.</p>
+        </div>
+        <div class="privacidad-block">
+          <h3 data-i18n="priv6h">6. Vigencia</h3>
+          <p data-i18n="priv6p">Los datos se conservarán durante el tiempo necesario para cumplir la finalidad descrita y, en todo caso, por el período que exijan las normas electorales aplicables. Transcurrido ese plazo serán eliminados de forma segura.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -177,18 +295,17 @@
   <footer>
     <img src="patri-ideal.png" alt="Patrimonio Ideal" onerror="this.style.display='none'" />
     <ul class="footer-links">
-      <li><a href="#manifiesto">Manifiesto</a></li>
-      <li><a href="#politicas">Políticas</a></li>
-      <li><a href="#fundadora">Fundadora</a></li>
-      <li><a href="#">Prensa</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li><a href="#manifiesto" data-i18n="navManifesto">Manifiesto</a></li>
+      <li><a href="#politicas" data-i18n="navPolicies">Propuestas</a></li>
+      <li><a href="#fundadora" data-i18n="navFounder">Fundadora</a></li>
+      <li><a href="#firmas" data-i18n="navSign">Apóyanos</a></li>
+      <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
+      <li><a href="#privacidad" data-i18n="navPrivacy">Datos Personales</a></li>
     </ul>
-    <p class="footer-copy">© 2026 Patrimonio Ideal</p>
+    <p class="footer-copy">© 2026 Patrimonio Ideal · Colombia</p>
   </footer>
 
   <div class="colombia-stripe"></div>
-
   <script src="script.js"></script>
-
 </body>
 </html>
