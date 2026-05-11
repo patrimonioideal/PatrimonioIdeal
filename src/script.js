@@ -1,9 +1,5 @@
 /* ═══════════════════════════════════════════════
    PATRIMONIO IDEAL — script.js
-   - i18n (ES/EN)
-   - Firma counter with window.storage persistence
-   - AI-powered contact form via Anthropic API
-   - Scroll reveal
 ═══════════════════════════════════════════════ */
 
 const META_FIRMAS = 50000;
