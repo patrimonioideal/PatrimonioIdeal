@@ -335,7 +335,7 @@
         { href: '#politicas',  label: t.navPolicies  },
         { href: '#fundadora',  label: t.navFounder   },
         { href: '#firmas',     label: t.navSign       },
-        { href: 'docs/programa-de-gobierno-2026.pdf', label: t.navProgram, target: '_blank' },
+        { href: 'files/programa-de-gobierno-2026.pdf', label: t.navProgram, target: '_blank' },
       ];
 
       return (
@@ -801,7 +801,7 @@
           <div className="flex flex-col gap-2 items-center md:items-start">
             <img src="assets/patri-ideal.png" alt="Patrimonio Ideal" className="h-11 w-auto" onError={e => e.target.style.display='none'} />
             <p className="text-xs text-muted">{t.footerFounded}</p>
-            <a href="docs/programa-de-gobierno-2026.pdf" target="_blank"
+            <a href="files/programa-de-gobierno-2026.pdf" target="_blank"
               className="text-xs font-bold tracking-widest uppercase text-purple-dark border-b-2 border-pink-pastel pb-px hover:text-pink-deep hover:border-pink-deep transition-colors duration-200">
               {t.footerProgram}
             </a>
