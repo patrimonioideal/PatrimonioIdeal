@@ -210,6 +210,13 @@
           { h:'5. Seguridad de la información', p:'Los números de cédula se almacenan de forma anonimizada mediante función de hash unidireccional. No se comparten datos personales con terceros salvo obligación legal o requerimiento de autoridad electoral competente.' },
           { h:'6. Vigencia', p:'Los datos se conservarán durante el tiempo necesario para cumplir la finalidad descrita y, en todo caso, por el período que exijan las normas electorales aplicables. Transcurrido ese plazo serán eliminados de forma segura.' },
         ],
+        docTag1: 'Documento oficial',
+        docTitle1: 'Estatutos del Partido',
+        docDesc1: 'El marco normativo que rige la organización interna, los derechos y deberes de los militantes, y los órganos de dirección de Patrimonio Ideal. Documento vinculante conforme a la Ley 130 de 1994.',
+        docTag2: 'Afiliación',
+        docTitle2: 'Formulario de Inscripción de Militantes',
+        docDesc2: 'Únete formalmente a Patrimonio Ideal. Descarga el formulario, diligéncialo con letra clara en mayúscula de imprenta y envíalo a afiliaciones@patrimonioideal.co junto con fotocopia de tu cédula.',
+        docDownload: 'Descargar PDF',
         sysPrompt:'Eres el asistente virtual de Patrimonio Ideal, un partido político colombiano de centro-izquierda fundado por Camila Lucía Caleon-Duque. Tu tarea es responder de forma breve, cálida y profesional a mensajes enviados a través del formulario de contacto del sitio web. Responde siempre en español, en 2-3 oraciones máximo. No menciones que eres una IA. Firma siempre como "El equipo de Patrimonio Ideal".',
       },
       en: {
@@ -273,6 +280,13 @@
           { h:'6. Retention Period', p:'Data will be retained for as long as necessary to fulfill the stated purpose and, in any event, for the period required by applicable electoral regulations. After that period, data will be securely deleted.' },
         ],
         sysPrompt:'You are the virtual assistant for Patrimonio Ideal, a Colombian center-left political party founded by Camila Lucía Caleon-Duque. Your task is to reply briefly, warmly, and professionally to messages sent through the website contact form. Always reply in English, in 2-3 sentences maximum. Do not mention that you are an AI. Always sign as "The Patrimonio Ideal team".',
+        docTag1: 'Official document',
+        docTitle1: 'Party Statutes',
+        docDesc1: 'The regulatory framework governing Patrimonio Ideal\'s internal organization, the rights and duties of members, and its governing bodies. Binding document under Law 130 of 1994.',
+        docTag2: 'Membership',
+        docTitle2: 'Membership Registration Form',
+        docDesc2: 'Join Patrimonio Ideal formally. Download the form, fill it out in clear block capital letters and send it to afiliaciones@patrimonioideal.co along with a copy of your national ID.',
+        docDownload: 'Download PDF',
       }
     };
 
@@ -792,6 +806,56 @@
       );
     }
 
+    /* ─── DOCUMENTOS ─── */
+    function Documentos({ t }) {
+      const docs = [
+        {
+          tag: t.docTag1,
+          title: t.docTitle1,
+          desc: t.docDesc1,
+          file: 'files/estatutos-patrimonio-ideal.pdf',
+          icon: '📜',
+          bg: 'bg-purple-dark',
+          accent: 'text-pink-pastel',
+          border: 'border-purple-light',
+          btn: 'bg-pink-bright hover:bg-pink-deep',
+        },
+        {
+          tag: t.docTag2,
+          title: t.docTitle2,
+          desc: t.docDesc2,
+          file: 'files/formulario-inscripcion-militante.pdf',
+          icon: '📋',
+          bg: 'bg-pink-deep',
+          accent: 'text-purple-light',
+          border: 'border-pink-pastel',
+          btn: 'bg-purple-dark hover:bg-dark',
+        },
+      ];
+      return (
+        <section id="documentos" className="bg-cream px-6 md:px-16 py-16 border-t-4 border-purple-light">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            {docs.map((d, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div className={`${d.bg} p-8 flex flex-col gap-4 border-b-4 ${d.border}`}>
+                  <span className="text-3xl">{d.icon}</span>
+                  <p className={`text-xs font-bold tracking-[0.2em] uppercase ${d.accent}`}>{d.tag}</p>
+                  <h3 className="font-playfair font-black text-white leading-tight" style={{fontSize:'clamp(1.4rem,2.5vw,2rem)'}}>
+                    {d.title}
+                  </h3>
+                  <p className="text-white/65 text-sm leading-relaxed flex-1">{d.desc}</p>
+                  <a href={d.file} download
+                    className={`inline-flex items-center gap-2 self-start ${d.btn} text-white text-xs font-bold tracking-widest uppercase px-6 py-3 transition-colors duration-200`}>
+                    ↓ {t.docDownload}
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
     /* ─── FOOTER ─── */
     function Footer({ t }) {
       const links = ['navManifesto','navPolicies','navFounder','navSign','navContact','navPrivacy'];
@@ -852,6 +916,7 @@
           <Signatures t={t} firmasData={firmasData} setFirmasData={setFirmasData} lang={lang} />
           <Contact t={t} lang={lang} />
           <Privacy t={t} />
+          <Documentos t={t} />
           <Footer t={t} />
         </>
       );
