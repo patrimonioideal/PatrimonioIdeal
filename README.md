@@ -11,7 +11,7 @@ Este repositorio está dedicado al desarrollo y hosting inicial de la página we
 
 - [x] Plan de Gobierno a diez (10) años.
 - [x] Estatutos del Partido
-- [ ] Formulario de Inscripción a Militantes
+- [x] Formulario de Inscripción a Militantes
 - [ ] Código de Ética
 - [ ] Kit de Prensa
 - [ ] Declaración de Principios
