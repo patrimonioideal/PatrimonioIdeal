@@ -20,7 +20,7 @@ export default function Footer({ t, lang }) {
             <img
               src="assets/patri-ideal.png"
               alt="Patrimonio Ideal"
-              className="h-10 w-5"
+              className="h-10 w-20 object-contain"
               onError={e => { e.target.style.display = 'none' }}
             />
             <p className="text-[0.72rem] text-muted">{f.founded}</p>
