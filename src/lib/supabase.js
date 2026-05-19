@@ -15,10 +15,13 @@ import { createClient } from '@supabase/supabase-js'
 // 4. En el SQL Editor de Supabase, ejecuta el schema de abajo.
 // ─────────────────────────────────────────────────────────────
 
-export const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL   ?? '',
-  import.meta.env.VITE_SUPABASE_ANON_KEY ?? ''
-)
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL  ?? ''
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? ''
+const isConfigured = SUPABASE_URL.startsWith('https://') && SUPABASE_KEY.length > 10
+
+export const supabase = isConfigured
+  ? createClient(SUPABASE_URL, SUPABASE_KEY)
+  : null
 
 // ─────────────────────────────────────────────────────────────
 // SQL SCHEMA — copiar y ejecutar en Supabase SQL Editor
@@ -77,6 +80,7 @@ export async function hashDoc(cedula) {
 
 /** Obtener conteo de firmas */
 export async function getFirmasCount() {
+  if (!supabase) return 0
   const { data, error } = await supabase
     .from('firmas_count')
     .select('total')
@@ -87,6 +91,7 @@ export async function getFirmasCount() {
 
 /** Insertar firma */
 export async function insertFirma({ nombre, cedula, ciudad, email }) {
+  if (!supabase) throw new Error('Supabase no configurado')
   const doc_hash = await hashDoc(cedula)
   const { error } = await supabase
     .from('firmas')
@@ -97,6 +102,7 @@ export async function insertFirma({ nombre, cedula, ciudad, email }) {
 
 /** Insertar mensaje de contacto */
 export async function insertContacto({ nombre, email, asunto, mensaje }) {
+  if (!supabase) throw new Error('Supabase no configurado')
   const { error } = await supabase
     .from('contactos')
     .insert({ nombre, email, asunto, mensaje })
