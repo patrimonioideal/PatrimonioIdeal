@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-body antialiased overflow-x-hidden;
+  }
+  ::selection {
+    @apply bg-pb text-white;
+  }
+}
+
+@layer utilities {
+  /* Colombia stripe */
+  .stripe-co {
+    background: linear-gradient(
+      to right,
+      #ffd700 0%, #ffd700 40%,
+      #003087 40%, #003087 62%,
+      #ce1126 62%, #ce1126 100%
+    );
+  }
+
+  /* Grain noise overlay */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Wavy underline */
+  .wavy {
+    text-decoration: underline wavy 2px;
+    text-decoration-color: #e879b8;
+    text-underline-offset: 6px;
+  }
+
+  /* Skew card on hover */
+  .card-tilt {
+    transition: transform 0.3s cubic-bezier(.22,.68,0,1.2);
+  }
+  .card-tilt:hover {
+    transform: rotate(-1deg) translateY(-4px) scale(1.01);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f7f2ec; }
+  ::-webkit-scrollbar-thumb { background: #c9a8e0; border-radius: 99px; }
+}
+
+/* Ticker animation */
+.ticker-inner {
+  animation: ticker 32s linear infinite;
+  will-change: transform;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Staggered fade-up for children */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease forwards;
+}
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger > *:nth-child(5) { animation-delay: 0.33s; }
+.stagger > *:nth-child(6) { animation-delay: 0.40s; }
+.stagger > *:nth-child(7) { animation-delay: 0.47s; }
+.stagger > *:nth-child(8) { animation-delay: 0.54s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
