@@ -18,14 +18,14 @@ export default function Footer({ t, lang }) {
           {/* Brand */}
           <div className="flex flex-col gap-2">
             <img
-              src="public/assets/patri-ideal.png"
+              src="assets/patri-ideal.png"
               alt="Patrimonio Ideal"
               className="h-10 w-auto"
               onError={e => { e.target.style.display = 'none' }}
             />
             <p className="text-[0.72rem] text-muted">{f.founded}</p>
             <a
-              href="public/docs/programa-de-gobierno-2026.pdf"
+              href="docs/programa-de-gobierno-2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[0.75rem] font-bold tracking-[0.1em] uppercase text-pd

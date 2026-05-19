@@ -107,10 +107,10 @@ export const T = {
     docs: {
       label: 'Documentos',
       items: [
-        { title: 'Plan de Gobierno 2026–2036', file: 'public/docs/programa-de-gobierno-2026.pdf', desc: '15 páginas · Propuestas y hoja de ruta a 10 años' },
-        { title: 'Estatutos del Partido',       file: 'public/docs/estatutos-patrimonio-ideal.pdf', desc: '12 páginas · Marco jurídico conforme Ley 130/1994' },
-        { title: 'Código de Ética',             file: 'public/docs/codigo-de-etica.pdf', desc: '25 páginas · 42 artículos · 10 capítulos' },
-        { title: 'Formulario de Inscripción',   file: 'public/docs/formulario-inscripcion-militante.pdf', desc: '2 páginas · Para afiliación formal' },
+        { title: 'Plan de Gobierno 2026–2036', file: 'docs/programa-de-gobierno-2026.pdf', desc: '15 páginas · Propuestas y hoja de ruta a 10 años' },
+        { title: 'Estatutos del Partido',       file: 'docs/estatutos-patrimonio-ideal.pdf', desc: '12 páginas · Marco jurídico conforme Ley 130/1994' },
+        { title: 'Código de Ética',             file: 'docs/codigo-de-etica.pdf', desc: '25 páginas · 42 artículos · 10 capítulos' },
+        { title: 'Formulario de Inscripción',   file: 'docs/formulario-inscripcion-militante.pdf', desc: '2 páginas · Para afiliación formal' },
       ],
     },
   },
@@ -148,10 +148,10 @@ export const T = {
       title: 'Concrete. Achievable. For Colombia.',
       items: [
         { icon: '🏥', title: 'Primary Healthcare',          body: 'Staff first-level health centers in 170 PDET municipalities. GP, nurse, and basic care guaranteed before referral.' },
-        { icon: '📚', title: 'Quality Public Education',    body: 'Rural connectivity, updated digital curricula and SENA scholarships for lower-income students.' },
+        { icon: '📚', title: 'Quality Education',    body: 'Rural connectivity, updated digital curricula and SENA scholarships for lower-income students.' },
         { icon: '🌿', title: 'Effective Environmental Protection', body: 'Real sanctions on deforestation, forest rangers in 51 critical municipalities, renewable energy incentives.' },
-        { icon: '📈', title: 'Local Entrepreneurship',      body: 'Digital single window in 72h, expanded Bancóldex microcredit, 20% local public procurement.' },
-        { icon: '📊', title: 'Efficient Public Spending',   body: 'Audit redundant contracts, results-based budgeting, real-time transparency portal.' },
+        { icon: '📈', title: 'Local Entrepreneurship',      body: 'Digital single window in 72h, expanded Bancóldex microcredit, 20% local procurement.' },
+        { icon: '📊', title: 'Efficient Spending',   body: 'Audit redundant contracts, results-based budgeting, real-time transparency portal.' },
         { icon: '✊', title: 'Gender Equity in Practice',   body: 'Pay audits in companies with 50+ employees, strengthened justice centers, electoral list parity.' },
         { icon: '🌾', title: 'Food Security & Rural Dev.',  body: 'Farmers\' markets in 32 capitals, free technical assistance, voluntary crop substitution.' },
         { icon: '💻', title: 'Digital Transparent State',   body: '80% of procedures digitized, SECOP Citizen, open data by default for every Colombian.' },
@@ -222,10 +222,10 @@ export const T = {
     docs: {
       label: 'Documents',
       items: [
-        { title: 'Government Plan 2026–2036',  file: 'public/docs/programa-de-gobierno-2026.pdf', desc: '15 pages · Proposals and 10-year roadmap' },
-        { title: 'Party Statutes',             file: 'public/docs/estatutos-patrimonio-ideal.pdf', desc: '12 pages · Legal framework, Law 130/1994' },
-        { title: 'Code of Ethics',             file: 'public/docs/codigo-de-etica.pdf', desc: '25 pages · 42 articles · 10 chapters' },
-        { title: 'Membership Form',            file: 'public/docs/formulario-inscripcion-militante.pdf', desc: '2 pages · For formal affiliation' },
+        { title: 'Government Plan 2026–2036',  file: 'docs/programa-de-gobierno-2026.pdf', desc: '15 pages · Proposals and 10-year roadmap' },
+        { title: 'Party Statutes',             file: 'docs/estatutos-patrimonio-ideal.pdf', desc: '12 pages · Legal framework, Law 130/1994' },
+        { title: 'Code of Ethics',             file: 'docs/codigo-de-etica.pdf', desc: '25 pages · 42 articles · 10 chapters' },
+        { title: 'Membership Form',            file: 'docs/formulario-inscripcion-militante.pdf', desc: '2 pages · For formal affiliation' },
       ],
     },
   },
