@@ -25,7 +25,7 @@ export default function Footer({ t, lang }) {
             />
             <p className="text-[0.72rem] text-muted">{f.founded}</p>
             <a
-              href="/docs/programa-de-gobierno-2026.pdf"
+              href="public/docs/programa-de-gobierno-2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[0.75rem] font-bold tracking-[0.1em] uppercase text-pd

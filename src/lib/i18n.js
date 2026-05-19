@@ -107,10 +107,10 @@ export const T = {
     docs: {
       label: 'Documentos',
       items: [
-        { title: 'Plan de Gobierno 2026–2036', file: '/docs/programa-de-gobierno-2026.pdf', desc: '15 páginas · Propuestas y hoja de ruta a 10 años' },
-        { title: 'Estatutos del Partido',       file: '/docs/estatutos-patrimonio-ideal.pdf', desc: '12 páginas · Marco jurídico conforme Ley 130/1994' },
-        { title: 'Código de Ética',             file: '/docs/codigo-de-etica.pdf', desc: '25 páginas · 42 artículos · 10 capítulos' },
-        { title: 'Formulario de Inscripción',   file: '/docs/formulario-inscripcion-militante.pdf', desc: '2 páginas · Para afiliación formal' },
+        { title: 'Plan de Gobierno 2026–2036', file: 'public/docs/programa-de-gobierno-2026.pdf', desc: '15 páginas · Propuestas y hoja de ruta a 10 años' },
+        { title: 'Estatutos del Partido',       file: 'public/docs/estatutos-patrimonio-ideal.pdf', desc: '12 páginas · Marco jurídico conforme Ley 130/1994' },
+        { title: 'Código de Ética',             file: 'public/docs/codigo-de-etica.pdf', desc: '25 páginas · 42 artículos · 10 capítulos' },
+        { title: 'Formulario de Inscripción',   file: 'public/docs/formulario-inscripcion-militante.pdf', desc: '2 páginas · Para afiliación formal' },
       ],
     },
   },
@@ -222,10 +222,10 @@ export const T = {
     docs: {
       label: 'Documents',
       items: [
-        { title: 'Government Plan 2026–2036',  file: '/docs/programa-de-gobierno-2026.pdf', desc: '15 pages · Proposals and 10-year roadmap' },
-        { title: 'Party Statutes',             file: '/docs/estatutos-patrimonio-ideal.pdf', desc: '12 pages · Legal framework, Law 130/1994' },
-        { title: 'Code of Ethics',             file: '/docs/codigo-de-etica.pdf', desc: '25 pages · 42 articles · 10 chapters' },
-        { title: 'Membership Form',            file: '/docs/formulario-inscripcion-militante.pdf', desc: '2 pages · For formal affiliation' },
+        { title: 'Government Plan 2026–2036',  file: 'public/docs/programa-de-gobierno-2026.pdf', desc: '15 pages · Proposals and 10-year roadmap' },
+        { title: 'Party Statutes',             file: 'public/docs/estatutos-patrimonio-ideal.pdf', desc: '12 pages · Legal framework, Law 130/1994' },
+        { title: 'Code of Ethics',             file: 'public/docs/codigo-de-etica.pdf', desc: '25 pages · 42 articles · 10 chapters' },
+        { title: 'Membership Form',            file: 'public/docs/formulario-inscripcion-militante.pdf', desc: '2 pages · For formal affiliation' },
       ],
     },
   },

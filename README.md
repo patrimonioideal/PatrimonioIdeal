@@ -19,7 +19,6 @@ npm install
 ## 2. Configurar Supabase
 
 ### 2.1 Crear proyecto
-
 1. Ve a [supabase.com](https://supabase.com) y crea una cuenta gratuita.
 2. Crea un nuevo proyecto (elige región más cercana, ej. `us-east-1`).
 3. Espera ~2 min a que se inicialice.
@@ -197,16 +196,13 @@ pi-web/
 ## 8. Ver datos de Supabase
 
 En el dashboard de Supabase:
-
 - **Table Editor** → `firmas` → ver todas las firmas recibidas
 - **Table Editor** → `contactos` → ver mensajes de contacto
 - **SQL Editor** → `select * from firmas_count;` → conteo actual
 
 Para exportar firmas como CSV:
-
 ```sql
 copy (select nombre, ciudad, email, created_at from firmas order by created_at)
 to '/tmp/firmas.csv' csv header;
 ```
-
 O desde el Table Editor → botón **Export**.
