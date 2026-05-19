@@ -1,20 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
 
-// ─────────────────────────────────────────────────────────────
-// CONFIGURACIÓN DE SUPABASE
-//
-// 1. Ve a https://supabase.com y crea un proyecto gratuito.
-// 2. En el dashboard: Settings → API → copia:
-//      - Project URL  →  VITE_SUPABASE_URL
-//      - anon public key  →  VITE_SUPABASE_ANON_KEY
-// 3. Crea un archivo .env en la raíz del proyecto:
-//
-//      VITE_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
-//      VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6...
-//
-// 4. En el SQL Editor de Supabase, ejecuta el schema de abajo.
-// ─────────────────────────────────────────────────────────────
-
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL  ?? ''
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? ''
 const isConfigured = SUPABASE_URL.startsWith('https://') && SUPABASE_KEY.length > 10
@@ -22,51 +7,6 @@ const isConfigured = SUPABASE_URL.startsWith('https://') && SUPABASE_KEY.length 
 export const supabase = isConfigured
   ? createClient(SUPABASE_URL, SUPABASE_KEY)
   : null
-
-// ─────────────────────────────────────────────────────────────
-// SQL SCHEMA — copiar y ejecutar en Supabase SQL Editor
-// ─────────────────────────────────────────────────────────────
-//
-// -- Tabla de firmas de apoyo
-// create table if not exists firmas (
-//   id          bigserial primary key,
-//   nombre      text not null,
-//   doc_hash    text not null unique,   -- hash SHA-256 de la cédula
-//   ciudad      text,
-//   email       text not null,
-//   created_at  timestamptz default now()
-// );
-//
-// -- Vista pública: solo el conteo (Row Level Security)
-// create or replace view firmas_count as
-//   select count(*) as total from firmas;
-//
-// -- Habilitar RLS en la tabla firmas
-// alter table firmas enable row level security;
-//
-// -- Policy: cualquiera puede insertar (anon)
-// create policy "insert_firma" on firmas
-//   for insert to anon with check (true);
-//
-// -- Policy: nadie puede leer filas individuales (solo la vista de conteo)
-// -- La vista firmas_count sí es pública porque no expone datos personales.
-//
-// -- Tabla de mensajes de contacto
-// create table if not exists contactos (
-//   id         bigserial primary key,
-//   nombre     text not null,
-//   email      text not null,
-//   asunto     text,
-//   mensaje    text not null,
-//   created_at timestamptz default now()
-// );
-//
-// alter table contactos enable row level security;
-//
-// create policy "insert_contacto" on contactos
-//   for insert to anon with check (true);
-//
-// ─────────────────────────────────────────────────────────────
 
 // ── HELPERS ──────────────────────────────────────────────────
 
