@@ -18,7 +18,7 @@ export default function Footer({ t, lang }) {
           {/* Brand */}
           <div className="flex flex-col gap-2">
             <img
-              src="/assets/patri-ideal.png"
+              src="public/assets/patri-ideal.png"
               alt="Patrimonio Ideal"
               className="h-10 w-auto"
               onError={e => { e.target.style.display = 'none' }}

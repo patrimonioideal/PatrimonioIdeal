@@ -41,7 +41,7 @@ export default function Navbar({ lang, setLang, t }) {
           {/* Logo */}
           <a href="#" onClick={() => window.scrollTo(0,0)} className="flex-shrink-0 py-2">
             <img
-              src="/assets/patri-ideal.png"
+              src="public/assets/patri-ideal.png"
               alt="Patrimonio Ideal"
               className={`w-auto transition-all duration-300 ${scrolled ? 'h-8' : 'h-10'}`}
               onError={e => { e.target.style.display = 'none' }}
