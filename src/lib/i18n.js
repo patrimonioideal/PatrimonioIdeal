@@ -9,7 +9,6 @@ export const T = {
       contact:   'Contacto',
     },
     hero: {
-      tag:      'Bogotá, Colombia · 28 de abril de 2026',
       title1:   'Por un',
       title2:   'Patrimonio',
       title3:   'que sea de todos.',
@@ -124,7 +123,6 @@ export const T = {
       contact:   'Contact',
     },
     hero: {
-      tag:    'Bogotá, Colombia · 28 April 2026',
       title1: 'For a',
       title2: 'Heritage',
       title3: 'that belongs to everyone.',

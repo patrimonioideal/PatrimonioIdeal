@@ -32,13 +32,6 @@ export default function Hero({ t }) {
       {/* ── MAIN CONTENT ──────────────────────────── */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pb-0 w-full">
 
-        {/* Tag */}
-        <p className="text-[0.72rem] font-semibold tracking-[0.25em] uppercase
-          text-muted mb-8 flex items-center gap-3 stagger">
-          <span className="inline-block w-8 h-px bg-muted/50" />
-          {h.tag}
-        </p>
-
         {/* Giant title */}
         <h1 className="font-display font-black leading-[0.92] mb-10 stagger"
           style={{ fontSize: 'clamp(3.5rem, 9vw, 9rem)' }}>
