@@ -19,7 +19,8 @@ export function useFirmas() {
   const percent = Math.min(100, Math.round((count / META) * 100))
 
   const submit = useCallback(async ({ nombre, cedula, ciudad, email, consent }, t) => {
-    if (!nombre || !cedula || !email || !consent || !email.includes('@')) {
+    if (!nombre?.trim() || !cedula?.trim() || !email?.trim() || 
+    consent !== true || !email.trim().includes('@')) {
       setMsg(t.error); setIsError(true); return false
     }
     setLoading(true); setMsg(''); setIsError(false)

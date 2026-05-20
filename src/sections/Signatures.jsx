@@ -108,7 +108,7 @@ export default function Signatures({ t }) {
                   <input
                     type="checkbox"
                     checked={form.consent}
-                    onChange={set('consent')}
+                    onChange={e => setForm(f => ({ ...f, consent: e.target.checked }))}
                     className="mt-0.5 w-4 h-4 accent-pb flex-shrink-0 cursor-pointer"
                   />
                   <span className="text-[0.8rem] text-white/50 leading-[1.55]">
