@@ -32,10 +32,11 @@ export function useFirmas() {
       return true
     } catch (err) {
       if (err?.code === '23505') {
-        // unique constraint violation = duplicate
         setMsg(t.duplicate); setIsError(false)
+      } else if (err?.message?.includes('configurado') || !supabase) {
+        setMsg('Error de conexión con el servidor. Intenta más tarde.'); setIsError(true)
       } else {
-        setMsg(t.error); setIsError(true)
+        setMsg(t.errorServer ?? 'Error al enviar. Intenta de nuevo.'); setIsError(true)
       }
       return false
     } finally {
