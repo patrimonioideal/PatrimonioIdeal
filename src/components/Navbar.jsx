@@ -20,6 +20,7 @@ export default function Navbar({ lang, setLang, t }) {
     { key: 'manifesto', href: '#manifesto' },
     { key: 'proposals', href: '#propuestas' },
     { key: 'founder',   href: '#fundadora'  },
+    { key: 'news', href: '#noticias' },
     { key: 'support',   href: '#firmas'     },
     { key: 'program',   href: '/docs/programa-de-gobierno-2026.pdf', external: true },
   ]

@@ -13,6 +13,7 @@ import Contact    from './sections/Contact'
 import Documents  from './sections/Documents'
 import Privacy    from './sections/Privacy'
 import Footer     from './sections/Footer'
+import News from './sections/News'
 
 export default function App() {
   const [lang, setLang] = useState('es')
@@ -27,6 +28,7 @@ export default function App() {
         <Manifesto  t={t} />
         <Proposals  t={t} />
         <Founder    t={t} />
+        <News t={t} lang={lang} />
         <Stats      t={t} firmaCount={count} />
         <Signatures t={t} />
         <Contact    t={t} lang={lang} />

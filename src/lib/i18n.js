@@ -49,6 +49,7 @@ export const T = {
       p2: 'Camila fundó Patrimonio Ideal desde la certeza de que la tecnología, la equidad y la democracia van de la mano. Que ser joven no es un obstáculo para transformar el país — es exactamente la razón para hacerlo.',
       quote: '"Ser joven no es un obstáculo para transformar el país. Es exactamente la razón para hacerlo."',
     },
+    news: 'Noticias',
     stats: [
       { value: '8',     label: 'Ejes programáticos' },
       { value: '—',     label: 'Firmas recolectadas', id: 'firmas' },
@@ -163,6 +164,7 @@ export const T = {
       p2: 'Camila founded Patrimonio Ideal with the certainty that technology, equality, and democracy go hand in hand. Being young is not an obstacle to transforming the country — it is precisely the reason to do so.',
       quote: '"Being young is not an obstacle to transforming the country. It is exactly the reason to do it."',
     },
+    news: 'News',
     stats: [
       { value: '8',     label: 'Programmatic axes' },
       { value: '—',     label: 'Signatures collected', id: 'firmas' },

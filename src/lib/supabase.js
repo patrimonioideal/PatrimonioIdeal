@@ -48,3 +48,15 @@ export async function insertContacto({ nombre, email, asunto, mensaje }) {
     .insert({ nombre, email, asunto, mensaje })
   if (error) throw error
 }
+
+/** Obtener posts publicados */
+export async function getPosts() {
+  if (!supabase) return []
+  const { data, error } = await supabase
+    .from('posts')
+    .select('*')
+    .eq('publicado', true)
+    .order('created_at', { ascending: false })
+  if (error) throw error
+  return data ?? []
+}
