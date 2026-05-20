@@ -13,10 +13,10 @@ function Field({ label, children }) {
   )
 }
 
-const inputClass = `bg-white/7 border border-white/15 text-white rounded-xl
+const inputClass = `bg-white/10 border border-white/20 text-white rounded-xl
   px-4 py-3 text-[0.95rem] outline-none
   focus:border-pp focus:ring-1 focus:ring-pp/40
-  transition-all placeholder:text-white/25 font-body w-full`
+  transition-all placeholder:text-white/30 font-body w-full`
 
 export default function Contact({ t }) {
   const c = t.contact

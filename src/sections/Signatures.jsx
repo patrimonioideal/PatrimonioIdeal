@@ -12,10 +12,10 @@ function Input({ label, type = 'text', value, onChange, ...rest }) {
         type={type}
         value={value}
         onChange={onChange}
-        className="bg-white/7 border border-white/15 text-white rounded-xl
+        className="bg-white/10 border border-white/20 text-white rounded-xl
           px-4 py-3 text-[0.95rem] outline-none
           focus:border-pp focus:ring-1 focus:ring-pp/40
-          transition-all placeholder:text-white/25 font-body"
+          transition-all placeholder:text-white/30 font-body"
         {...rest}
       />
     </div>
